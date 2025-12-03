@@ -1,5 +1,6 @@
 # YouTube Immersion
-YouTubeのMVを、Apple Music風のスタイリッシュな歌詞表示で楽しむためのChrome拡張機能です。
+YouTubeのMVを、Apple Music風のスタイリッシュな歌詞表示で楽しむためのブラウザ拡張機能です。
+Chrome・Firefoxに対応しています。
 現状、Betaです。ご承知おきください
 
 
@@ -16,10 +17,18 @@ YouTubeのMVを、Apple Music風のスタイリッシュな歌詞表示で楽し
 
 ## 📥 インストール方法
 
+### Chrome
 1. ZIP をダウンロードして解凍します。
 2. Chromeブラウザを開き、アドレスバーに `chrome://extensions/` と入力します。
 3. 右上の **「デベロッパーモード」** をONにします。
 4. **「パッケージ化されていない拡張機能を読み込む」** をクリックし、解凍したフォルダを選択します。
+
+### Firefox
+1. ZIP をダウンロードして解凍します。
+2. Firefoxブラウザを開き、アドレスバーに `about:debugging#/runtime/this-firefox` と入力します。
+3. **「一時的なアドオンを読み込む」** をクリックし、解凍したフォルダ内の `manifest.json` ファイルを選択します。
+
+**注意**: Firefoxでは一時的なアドオンとしてインストールされるため、ブラウザを再起動すると削除されます。恒久的にインストールするには、Mozilla Add-onsでの公開が必要です。
 
 ## 🎮 使い方
 

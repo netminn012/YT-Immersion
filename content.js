@@ -1,3 +1,6 @@
+// Cross-browser compatibility: Use browser API (works in both Chrome and Firefox)
+const browserAPI = typeof browser !== 'undefined' ? browser : chrome;
+
 document.addEventListener('yt-navigate-finish', onNavigate);
 window.addEventListener('load', init);
 
@@ -456,7 +459,7 @@ function setupBridge() {
     bridgeIframe = document.createElement('iframe');
     bridgeIframe.id = 'mv-bridge-frame';
     bridgeIframe.style.display = 'none';
-    bridgeIframe.src = chrome.runtime.getURL('bridge.html');
+    bridgeIframe.src = browserAPI.runtime.getURL('bridge.html');
     document.body.appendChild(bridgeIframe);
     console.log("MV Mode: Bridge Iframe created");
 
@@ -651,7 +654,7 @@ async function takeSingleScreenShot() {
     await new Promise(r => setTimeout(r, 200));
 
     try {
-        const response = await chrome.runtime.sendMessage({ type: 'CAPTURE_CURRENT_TAB' });
+        const response = await browserAPI.runtime.sendMessage({ type: 'CAPTURE_CURRENT_TAB' });
         
         if(overlay) overlay.style.display = 'block';
         if(sidebar) sidebar.style.display = 'block';
